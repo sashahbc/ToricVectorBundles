@@ -985,11 +985,11 @@ doc ///
         filtrations
         details
 ///
-
+-*
 -- TODO Update and add Kaneyama version
 doc ///
     Key
-        (symbol ==,ToricVectorBundleKaneyama,ToricVectorBundleKaneyama)
+        (symbol ==,ToricVectorBundle,ToricVectorBundle)
     Headline
         checks for isomorphism or equality
     Usage
@@ -1017,7 +1017,7 @@ doc ///
         areIsomorphic
         (isomorphism,ToricVectorBundle,ToricVectorBundle)
 ///
-
+*-
 
 doc ///
     Key
@@ -1850,7 +1850,7 @@ doc ///
 --------------------------------------------------------
 -- Weil decorations
 --------------------------------------------------------
--*
+
 
 doc ///
     Key
@@ -1878,10 +1878,6 @@ doc ///
     Caveat 
         The stratum $(0,\infinity)$ is omitted. 
     SeeAlso
-        (variety, WeilDecoration)
-        (rank, WeilDecoration)
-        (strata, WeilDecoration)
-        weilDecorationDivisors
         weilToKlyachko
 ///
 
@@ -1921,7 +1917,7 @@ doc ///
         weilDecoration
 ///
 
-
+-*
 doc ///
     Key
         strata
@@ -1993,7 +1989,7 @@ doc ///
     SeeAlso
         weilDecoration
 ///
-
+*-
 
 --------------------------------------------------------
 -- Display and details
@@ -2049,7 +2045,7 @@ doc ///
 ///
 
 
-*-
+
 --------------------------------------------------------
 -- Others
 --------------------------------------------------------

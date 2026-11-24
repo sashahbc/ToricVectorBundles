@@ -247,7 +247,7 @@ doc ///
             
 
             Alternatively, the input can be given as a pair of a @TO "NormalToricVarieties::NormalToricVariety"@ @TT "X"@  over a field @TT "F"@ and a HashTable H.
-            The HashTable H must have as keys the rays of the fan and for each ray store a list consisting first of a $r\times r$ matrix with 
+            The HashTable H must have as keys the rays of the fan and for each ray store a list consisting first of a rank $r$ matrix with 
             entries in @TT "F"@ and a list of $r$ integers.
         Text
             Note that the matrices and the filtration jumps that are given to the function need not
@@ -552,7 +552,6 @@ doc ///
 ///
 
 
--- TODO Update and add Kaneyama version
 doc ///
     Key
         lineBundle
@@ -583,7 +582,6 @@ doc ///
     SeeAlso
         twist
         (tensor,ToricVectorBundle, ToricVectorBundle)
-        lineBundleKaneyama
 ///
 
 
@@ -617,7 +615,6 @@ doc ///
       (tensor, ToricVectorBundle, ToricVectorBundle)
       (symbol ++,  ToricVectorBundle, ToricVectorBundle)
       twist
-      toricVectorBundleKaneyama
 ///
 
 
@@ -661,7 +658,6 @@ doc ///
         cotangentBundle
         tangentBundleKaneyama
         cotangentBundleKaneyama
-        (dual, ToricVectorBundleKaneyama)
 ///
 
 doc ///
@@ -865,8 +861,6 @@ doc ///
 ///
 
 
--- TODO Update and add Kaneyama version
-
 doc ///
     Key
         tangentBundle
@@ -897,11 +891,8 @@ doc ///
             details E
     SeeAlso
         cotangentBundle
-        tangentBundleKaneyama
-        cotangentBundleKaneyama
 ///
 
--- TODO Update and add Kaneyama version
 
 doc ///
     Key
@@ -935,7 +926,7 @@ doc ///
     Caveat
         The ordering of the list @TT "L"@ must correspond to the ordering of the rays of the fan as taken by @TO "NormalToricVarieties::NormalToricVarieties"@.
     SeeAlso
-        lineBundle
+         lineBundle
         details
 ///
 
@@ -944,7 +935,6 @@ doc ///
     Key
         areIsomorphic
         (areIsomorphic,ToricVectorBundle,ToricVectorBundle)
-        (symbol ==,ToricVectorBundle,ToricVectorBundle)
     Headline
         checks if two vector bundles are isomorphic
     Usage
@@ -975,7 +965,7 @@ doc ///
         defined over @TT "ZZ"@, the function will check for an isomorphism of the filtrations over
         @TT "ZZ"@.
         The method checks several possible @TO ToricVectorBundleMap@ and checks if any of them is an 
-        isomorphism. However, it may happen that the method returns false when in fact the two sheafs 
+        isomorphism. However, it may happen that the method returns false when in fact the two sheaves 
         are isomorphic. So the method @TO isIsomorphism@ can be used to see if a particular map is an isomorphism 
         and store it in the cache of the varieties if they are isomorphic, making areIsomorphic return true in that case.
     SeeAlso
@@ -985,8 +975,8 @@ doc ///
         filtrations
         details
 ///
--*
--- TODO Update and add Kaneyama version
+
+
 doc ///
     Key
         (symbol ==,ToricVectorBundle,ToricVectorBundle)
@@ -1017,7 +1007,7 @@ doc ///
         areIsomorphic
         (isomorphism,ToricVectorBundle,ToricVectorBundle)
 ///
-*-
+
 
 doc ///
     Key
@@ -1085,7 +1075,6 @@ doc ///
 -- Cohomology related methods
 --------------------------------------------------------
 
--- TODO Update and add Kaneyama version
 
 doc ///
     Key
@@ -1142,7 +1131,6 @@ doc ///
         eulerChi
 ///
 
--- TODO Update and add Kaneyama version
 doc ///
     Key
         (cohomology,ZZ,ToricVectorBundle,List)
@@ -1209,7 +1197,6 @@ doc ///
         eulerChi
 ///
 
--- TODO Update and add Kaneyama version
 
 doc ///
     Key
@@ -1245,7 +1232,6 @@ doc ///
         (deltaE,ToricVectorBundleKaneyama)
 ///
 
--- TODO Update and add Kaneyama version
 
 doc ///
     Key
@@ -1286,7 +1272,6 @@ doc ///
         (hh,ZZ,ToricVectorBundle)
 ///
 
--- TODO Update and add Kaneyama version
 
 doc ///
     Key
@@ -1878,6 +1863,10 @@ doc ///
     Caveat 
         The stratum $(0,\infinity)$ is omitted. 
     SeeAlso
+        (variety, WeilDecoration)
+        (rank, WeilDecoration)
+        (strata, WeilDecoration)
+        weilDecorationDivisors
         weilToKlyachko
 ///
 
@@ -1919,8 +1908,12 @@ doc ///
         weilDecoration
 ///
 
+<<<<<<< HEAD
 *-
 -*
+=======
+
+>>>>>>> 070950859304e8a1e4699b8e2484cea9e6ea1ad6
 doc ///
     Key
         strata
@@ -1992,7 +1985,7 @@ doc ///
     SeeAlso
         weilDecoration
 ///
-*-
+
 
 --------------------------------------------------------
 -- Display and details
@@ -2048,7 +2041,7 @@ doc ///
 ///
 
 
-
+*-
 --------------------------------------------------------
 -- Others
 --------------------------------------------------------
@@ -2210,7 +2203,7 @@ doc ///
         randomDeformation
 ///
 
-
+-*  Not exported anymore
 doc ///
     Key
         customConeSort
@@ -2229,7 +2222,7 @@ doc ///
         Text
           TODO
 ///
-
+*-
 
 --------------------------------------------------------
 -- Old docs

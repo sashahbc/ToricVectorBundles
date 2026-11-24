@@ -145,26 +145,26 @@ doc ///
 
 doc ///
     Key
-        (details,ToricVectorBundleKaneyama)
+        (ring,ToricVectorBundleKaneyama)
     Headline
-        the details of a toric vector bundle given in Kaneyama's description
+        the graded ring of the bundle when given in Kaneyama's description
     Usage
-        D = details E
+        R = ring E
     Inputs
-        E : ToricVectorBundleKaneyama
+        E:ToricVectorBundleKaneyama
     Outputs
-        D : HashTable
+        R:Ring
     Description
         Text
-          For a toric vector bundle in Kaneyama's description, the sequence @TT "D"@ contains a hash table
-          that assigns to each maximal cone $\sigma$ of the underlying fan its matrix of rays and its
-          matrix of degrees, and a hash table giving a transition matrix for every pair of maximal
-          cones that intersect in a codimension 1 face.
+            For a vector bundle in Kaneyama's description the graded ring is @TO QQ@ with degree
+            space the lattice of the underlying fan.
         Example
-            E = tangentBundleKaneyama(pp1ProductFan 2)
-            details E
+            E =tangentBundleKaneyama(projectiveSpaceFan 3)
+            ring E
+           
     SeeAlso
-        (details, ToricVectorBundle)
+       (ring,ToricVectorBundle)
+
 ///
 
 doc ///
@@ -214,30 +214,6 @@ doc ///
        (rays,ToricVectorBundle)
        (rank,ToricVectorBundleKaneyama)
        (fan,ToricVectorBundleKaneyama)
-///
-
-doc ///
-    Key
-        (ring,ToricVectorBundleKaneyama)
-    Headline
-        the graded ring of the bundle when given in Kaneyama's description
-    Usage
-        R = ring E
-    Inputs
-        E:ToricVectorBundleKaneyama
-    Outputs
-        R:Ring
-    Description
-        Text
-            For a vector bundle in Kaneyama's description the graded ring is @TO QQ@ with degree
-            space the lattice of the underlying fan.
-        Example
-            E =tangentBundleKaneyama(projectiveSpaceFan 3)
-            ring E
-           
-    SeeAlso
-       (ring,ToricVectorBundle)
-
 ///
 
 doc ///
@@ -418,131 +394,6 @@ doc ///
         regCheck
 ///
 
-doc ///
-    Key
-        (isWellDefined,ToricVectorBundleKaneyama)
-    Headline
-        checks if the data does in fact define an equivariant toric vector bundle
-    Usage
-        b = isWellDefined E
-    Inputs
-        E:ToricVectorBundleKaneyama
-    Outputs
-        b:Boolean
-            whether @TT "E"@ defines a toric vector bundle
-    Description
-        Text
-            Given @TT "E"@ in Kaneyama's description, i.e. @TT "E"@ is a @TO ToricVectorBundleKaneyama@, then data in @TT "E"@ defines
-            an equivariant toric vector bundle on the toric variety if and only if it satisfies the regularity and
-            the cocycle condition (See @TO cocycleCheck@ and @TO regCheck@).
-        Example
-            E = toricVectorBundleKaneyama(2,pp1ProductFan 2)
-            isWellDefined E
-            E = addBaseChange(E,{matrix{{1,2},{3,1}},matrix{{-1,0},{3,1}},matrix{{1,2},{-3,-1}},matrix{{-1,0},{-3,-1}}})
-            isWellDefined E
-    SeeAlso
-        cocycleCheck
-        regCheck
-        addBaseChange
-        addDegrees
-        details
-        (isWellDefined,ToricVectorBundleMap)
-///
-
-doc ///
-    Key
-        (symbol ++, ToricVectorBundleKaneyama, ToricVectorBundleKaneyama)
-    Headline
-        the direct sum of two toric vector bundles in Kaneyama's description
-    Usage
-        E = E1 ++ E2
-    Inputs
-        E1 : ToricVectorBundleKaneyama
-        E2 : ToricVectorBundleKaneyama
-    Outputs
-        E:ToricVectorBundleKaneyama
-    Description
-        Text
-            If $E_1$ and $E_2$ are defined over the same fan, then @TT "directSum"@ computes the direct sum of the
-            two vector bundles in Kaneyama's description. The resulting bundle will be in Kaneyama's description.
-        Example
-            E1 = toricVectorBundleKaneyama(2,hirzebruchFan 3)
-            E2 = tangentBundleKaneyama(hirzebruchFan 3)
-            E = E1 ++ E2
-            details E
-    SeeAlso
-        (symbol ++,ToricVectorBundle,ToricVectorBundle)
-        (symbol **,ToricVectorBundle,ToricVectorBundle)
-        (symbol **,ToricVectorBundleKaneyama,ToricVectorBundleKaneyama)
-        (tensor,ToricVectorBundle,ToricVectorBundle)
-        (tensor,ToricVectorBundleKaneyama,ToricVectorBundleKaneyama)
-        (exteriorPower,ZZ,ToricVectorBundle)
-        (exteriorPower,ZZ,ToricVectorBundleKaneyama)
-        (symmetricPower,ZZ,ToricVectorBundle)
-        (symmetricPower,ZZ,ToricVectorBundleKaneyama)
-///
-
-doc ///
-    Key
-        (dual, ToricVectorBundleKaneyama)
-    Headline
-        the dual bundle of a toric vector bundle in Kaneyama's description
-    Usage
-        Ed = dual E
-    Inputs
-        E : ToricVectorBundleKaneyama
-    Outputs
-        Ed : ToricVectorBundleKaneyama
-    Description
-        Text
-            @TT "dual"@ computes the dual vector bundle of a toric vector bundle. It will be given in Kaneyama's
-            description. (TODO: FIX EXAMPLE the bundles should be equal)
-        Example
-            E = tangentBundleKaneyama projectiveSpaceFan 2
-            Ed = dual E
-            details Ed
-            CT = cotangentBundleKaneyama projectiveSpaceFan 2
-            details CT
-            Ed == CT
-    SeeAlso
-        (dual,ToricVectorBundle)
-        tangentBundle
-        tangentBundleKaneyama
-        cotangentBundle
-        cotangentBundleKaneyama
-///
-
-doc ///
-    Key
-        (exteriorPower, ZZ, ToricVectorBundleKaneyama)
-    Headline
-        exterior power of a toric vector bundle in Kaneyama's description
-    Usage
-        El = exteriorPower(l,F)
-    Inputs
-        l : ZZ
-            strictly positive
-        E : ToricVectorBundleKaneyama
-    Outputs
-        El: ToricVectorBundleKaneyama
-            the l-th exterior power of F
-    Description
-        Text
-            Computes the @TT "l"@-th exterior power of the toric vector bundle @TT "E"@, given in Kaneyama's
-            description. The resulting bundle will be given in Kaneyama's description. @TT "l"@ must be strictly
-            positive and at most equal the rank of the bundle. (TODO: Is this a good example? From old documentation)
-        Example
-          E = tangentBundleKaneyama(hirzebruchFan 3)
-          details E
-          El = exteriorPower(2,E)
-          details El
-    SeeAlso
-        (exteriorPower, ZZ, ToricVectorBundle)
-        (symmetricPower, ZZ, ToricVectorBundle)
-        (symmetricPower, ZZ, ToricVectorBundleKaneyama)
-        ToricVectorBundle
-        ToricVectorBundleKaneyama
-///
 
 -- TODO Unify with Klyachko
 
@@ -650,6 +501,33 @@ doc ///
 ///
 
 -- TODO Unify with Klyachko
+
+doc ///
+    Key
+        (details,ToricVectorBundleKaneyama)
+    Headline
+        the details of a toric vector bundle given in Kaneyama's description
+    Usage
+        D = details E
+    Inputs
+        E : ToricVectorBundleKaneyama
+    Outputs
+        D : HashTable
+    Description
+        Text
+          For a toric vector bundle in Kaneyama's description, the sequence @TT "D"@ contains a hash table
+          that assigns to each maximal cone $\sigma$ of the underlying fan its matrix of rays and its
+          matrix of degrees, and a hash table giving a transition matrix for every pair of maximal
+          cones that intersect in a codimension 1 face.
+        Example
+            E = tangentBundleKaneyama(pp1ProductFan 2)
+            details E
+    SeeAlso
+        (details, ToricVectorBundle)
+///
+
+
+-- TODO Unify with Klyachko
 -*
 doc ///
     Key 
@@ -671,3 +549,34 @@ doc ///
           TODO
 ///
 *-
+
+-- Change to Kaneyama
+doc ///
+    Key
+        (isWellDefined,ToricVectorBundleKaneyama)
+    Headline
+        checks if the data does in fact define an equivariant toric vector bundle
+    Usage
+        b = isWellDefined E
+    Inputs
+        E:ToricVectorBundleKaneyama
+    Outputs
+        b:Boolean
+            whether @TT "E"@ defines a toric vector bundle
+    Description
+        Text
+            Given @TT "E"@ in Kaneyama's description, i.e. @TT "E"@ is a @TO ToricVectorBundleKaneyama@, then data in @TT "E"@ defines
+            an equivariant toric vector bundle on the toric variety if and only if it satisfies the regularity and
+            the cocycle condition (See @TO cocycleCheck@ and @TO regCheck@).
+        Example
+            E = toricVectorBundleKaneyama(2,pp1ProductFan 2)
+            isWellDefined E
+            E = addBaseChange(E,{matrix{{1,2},{3,1}},matrix{{-1,0},{3,1}},matrix{{1,2},{-3,-1}},matrix{{-1,0},{-3,-1}}})
+            isWellDefined E
+    SeeAlso
+        cocycleCheck
+        regCheck
+        addBaseChange
+        addDegrees
+        details
+///

@@ -620,7 +620,7 @@ doc ///
         (hh,ZZ,ToricVectorBundle)
         (hh,ZZ,ToricVectorBundleKaneyama)
 ///
-*-
+
 
 
 -- TODO Unify with Klyachko

@@ -127,7 +127,7 @@ export {
     "pp1ProductFan", 
     "projectiveSpaceFan",
     "raySortOfFan",
-    "customConeSort"
+    --"customConeSort"
     }
 
 protect cech
@@ -3009,9 +3009,9 @@ net WeilDecoration := WD -> (
 variety WeilDecoration := WD -> WD.variety
 rank WeilDecoration := ZZ => WD -> WD.rank
 
--- The stratum closures with their divisors, sorted by dimension.
-strata = method()
-strata WeilDecoration := List => WD -> WD.strata
+-- The stratum closures with their divisors, sorted by dimension. NOT USEFUL now that WeilDecoration is a list
+--strata = method()
+--strata WeilDecoration := List => WD -> WD.strata
 
 -- NOTE: The trivial strata is excluded for convenience in coding.
 weilDecoration = method()
@@ -3097,11 +3097,11 @@ firstChernClass ToricVectorBundle := E -> (
 weilToKlyachko = method()
 weilToKlyachko WeilDecoration := ToricVectorBundle => WD -> (
     -- concatenate all of the strata together.
-    filtMat := matrix {for pair in strata WD list gens pair_0};
+    filtMat := matrix {for pair in WD list gens pair_0};
     -- for a ray p, the stratum appears in index "coefficient of D_p", where D is the divisor
     -- decorating the stratum.
     jumps := for p to #rays variety WD - 1 list (
-        flatten for pair in strata WD list (
+        flatten for pair in WD list (
             D := entries vector pair_1;
             -- since there could be multiple columns, we have to list all of these jumps.
             toList (numgens pair_0 : D_p)

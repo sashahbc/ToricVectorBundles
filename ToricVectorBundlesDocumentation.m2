@@ -1835,7 +1835,7 @@ doc ///
 --------------------------------------------------------
 -- Weil decorations
 --------------------------------------------------------
--*
+
 
 doc ///
     Key
@@ -1848,29 +1848,30 @@ doc ///
     Inputs
         E : ToricVectorBundle
     Outputs
-        WD : WeilDecoration
+        WD : List
+            of pairs of stratum closure and associated divisor
     Description
         Text
             Given a @TO "ToricVectorBundle"@ @TT "E"@ in the Klyachko convention over a @TO "NormalToricVarieties:NormalToricVariety"@ @TT "X"@, 
-            it outputs its @TO "WeilDecoration"@ @TT "WD"@. This is given as follows.
-            Let $E_0$ denote the fiber of @TT "E"@ at the origin of @TT "X"@. Then the @TT "WD"@ is an hashTable that associates to 
+            it outputs its Weil decoration. This is given as follows.
+            Let $E_0$ denote the fiber of @TT "E"@ at the origin of @TT "X"@. Then the Weil decoration @TT "WD"@ is a list of pairs that associate to 
             each stratum closure in $E_0$, the divisor decorating it.
         Example
             X = toricProjectiveSpace 3;
             E = tangentBundle X;
             W = weilDecoration E;
-            netList strata W
+            netList W
     Caveat 
         The stratum $(0,\infinity)$ is omitted. 
     SeeAlso
-        (variety, WeilDecoration)
-        (rank, WeilDecoration)
-        (strata, WeilDecoration)
+        --(variety, WeilDecoration)
+        --(rank, WeilDecoration)
+        --(strata, WeilDecoration)
         weilDecorationDivisors
         weilToKlyachko
 ///
 
-
+-*
 doc ///
     Key
         weilToKlyachko
@@ -1907,7 +1908,7 @@ doc ///
 ///
 
 
-doc ///
+doc /// --TO REMOVE after changing the type of WeilDecoration to a list
     Key
         strata
         (strata, WeilDecoration)

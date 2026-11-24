@@ -127,7 +127,7 @@ export {
     "pp1ProductFan", 
     "projectiveSpaceFan",
     "raySortOfFan",
-    "customConeSort"
+    --"customConeSort"
     }
 
 protect cech

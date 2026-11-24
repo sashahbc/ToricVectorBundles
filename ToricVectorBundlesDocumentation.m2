@@ -247,7 +247,7 @@ doc ///
             
 
             Alternatively, the input can be given as a pair of a @TO "NormalToricVarieties::NormalToricVariety"@ @TT "X"@  over a field @TT "F"@ and a HashTable H.
-            The HashTable H must have as keys the rays of the fan and for each ray store a list consisting first of a $r\times r$ matrix with 
+            The HashTable H must have as keys the rays of the fan and for each ray store a list consisting first of a rank $r$ matrix with 
             entries in @TT "F"@ and a list of $r$ integers.
         Text
             Note that the matrices and the filtration jumps that are given to the function need not
@@ -552,7 +552,6 @@ doc ///
 ///
 
 
--- TODO Update and add Kaneyama version
 doc ///
     Key
         lineBundle
@@ -862,8 +861,6 @@ doc ///
 ///
 
 
--- TODO Update and add Kaneyama version
-
 doc ///
     Key
         tangentBundle
@@ -896,7 +893,6 @@ doc ///
         cotangentBundle
 ///
 
--- TODO Update and add Kaneyama version
 
 doc ///
     Key
@@ -969,7 +965,7 @@ doc ///
         defined over @TT "ZZ"@, the function will check for an isomorphism of the filtrations over
         @TT "ZZ"@.
         The method checks several possible @TO ToricVectorBundleMap@ and checks if any of them is an 
-        isomorphism. However, it may happen that the method returns false when in fact the two sheafs 
+        isomorphism. However, it may happen that the method returns false when in fact the two sheaves 
         are isomorphic. So the method @TO isIsomorphism@ can be used to see if a particular map is an isomorphism 
         and store it in the cache of the varieties if they are isomorphic, making areIsomorphic return true in that case.
     SeeAlso
@@ -980,7 +976,7 @@ doc ///
         details
 ///
 
--- TODO Update and add Kaneyama version
+
 doc ///
     Key
         (symbol ==,ToricVectorBundle,ToricVectorBundle)
@@ -1079,7 +1075,6 @@ doc ///
 -- Cohomology related methods
 --------------------------------------------------------
 
--- TODO Update and add Kaneyama version
 
 doc ///
     Key
@@ -1136,7 +1131,6 @@ doc ///
         eulerChi
 ///
 
--- TODO Update and add Kaneyama version
 doc ///
     Key
         (cohomology,ZZ,ToricVectorBundle,List)
@@ -1203,7 +1197,6 @@ doc ///
         eulerChi
 ///
 
--- TODO Update and add Kaneyama version
 
 doc ///
     Key
@@ -1239,7 +1232,6 @@ doc ///
         (deltaE,ToricVectorBundleKaneyama)
 ///
 
--- TODO Update and add Kaneyama version
 
 doc ///
     Key
@@ -1280,7 +1272,6 @@ doc ///
         (hh,ZZ,ToricVectorBundle)
 ///
 
--- TODO Update and add Kaneyama version
 
 doc ///
     Key
@@ -2205,7 +2196,7 @@ doc ///
         randomDeformation
 ///
 
-
+-*  Not exported anymore
 doc ///
     Key
         customConeSort
@@ -2224,7 +2215,7 @@ doc ///
         Text
           TODO
 ///
-
+*-
 
 --------------------------------------------------------
 -- Old docs

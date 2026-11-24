@@ -1907,6 +1907,10 @@ doc ///
         weilDecoration
 ///
 
+<<<<<<< HEAD
+*-
+-*
+=======
 
 doc /// --TO REMOVE after changing the type of WeilDecoration to a list
     Key

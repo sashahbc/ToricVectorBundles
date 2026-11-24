@@ -1,0 +1,13 @@
+TODO list
+
+- Fix bug in dual ToricVectorBundleKaneyama (see doc node in ToricVectorBundlesDocumentation.m2)
+- Renew isSurjective (see example-surjectivity.m2)
+---- Check that isSurjective works theoretically
+---- Fix any broken tests and bugs in isSurjective
+
+- Unify conventions for weilDecoration: rewrite the methods for lists. (strata, rank (?), weilDecorationDivisors (?), weilToKlyachko )
+
+- Fix bugs when runing installPackage ("ToricVectorBundles2", RerunExamples => true, RemakeAllDocumentation => true)
+---- Bug in some Kaneyama methods "error: expected left hand parameter to be a function, type, or a hash table"
+---- Bug in Postivity  "error: attempted to create symbol in protected dictionary" and " error: assignment to protected global variable 'cartesianProduct', originally defined at ..."
+----- ETC

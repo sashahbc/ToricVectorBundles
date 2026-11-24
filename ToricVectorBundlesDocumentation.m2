@@ -1851,7 +1851,7 @@ doc ///
 -- Weil decorations
 --------------------------------------------------------
 
-
+-*
 doc ///
     Key
         weilDecoration
@@ -1917,7 +1917,6 @@ doc ///
         weilDecoration
 ///
 
--*
 doc ///
     Key
         strata

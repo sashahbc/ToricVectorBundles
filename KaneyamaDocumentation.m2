@@ -496,7 +496,7 @@ doc ///
     Description
         Text
             @TT "dual"@ computes the dual vector bundle of a toric vector bundle. It will be given in Kaneyama's
-            description. (TODO: FIX EXAMPLE the bundles should be equal)
+            description. (TODO: FIX EXAMPLE the bundles should be equal - what is the equal doing for Kaneyama?)
         Example
             E = tangentBundleKaneyama projectiveSpaceFan 2
             Ed = dual E
@@ -543,6 +543,85 @@ doc ///
         ToricVectorBundle
         ToricVectorBundleKaneyama
 ///
+
+--I can't seem to add the (eulerChi,Matrix,ToricVectorBundleKaneyama) method call to this doc node
+-- I get the following error when I include it here:
+-- error: mismatched number of inputs in documentation for eulerChi(ToricVectorBundleKaneyama)
+doc ///
+    Key
+        (eulerChi,ToricVectorBundleKaneyama)
+    Headline
+        the Euler characteristic of a toric vector bundle in Kaneyama's description
+    Usage
+        i = eulerChi(E)
+    Inputs
+        E:ToricVectorBundleKaneyama
+    Outputs
+        i:ZZ
+    Description
+        Text
+            This function computes the Euler characteristic of a vector bundle if only the bundle is
+            given to the function. For this it first computes the set of all degrees that give
+            non-zero cohomology (see @TO deltaE@) and then computes the Euler characteristic for
+            each these degrees. If the underlying variety is not complete then this set may not be
+            finite. Thus, for a non-complete toric variety an error is returned.
+        Text
+            If in addition a one-column matrix over @TO ZZ@, representing a degree vector @TT "u"@,
+            is given, it computes the Euler characteristic of the degree @TT "u"@-part of the vector
+            bundle @TT "E"@. For this the variety need not be complete.
+        Example
+            E = tangentBundleKaneyama(hirzebruchFan 3)
+            u = matrix {{0},{0}}
+            eulerChi(E)
+    SeeAlso
+        deltaE
+        (deltaE,ToricVectorBundleKaneyama)
+        (cohomology,ZZ,ToricVectorBundle)
+        (cohomology,ZZ,ToricVectorBundleKaneyama)
+        (hh,ZZ,ToricVectorBundle)
+        (hh,ZZ,ToricVectorBundleKaneyama)
+///
+--If i try to include it here as a separate node, I get the following error:
+--error: type mismatch: Matrix not among types {ToricVectorBundleKaneyama} in documentation for eulerChi(Matrix,ToricVectorBundleKaneyama)
+-*
+doc ///
+    Key
+        (eulerChi,Matrix,ToricVectorBundleKaneyama)
+    Headline
+        the Euler characteristic of a toric vector bundle in Kaneyama's description
+    Usage
+        i = eulerChi(u,E)
+    Inputs
+        E:ToricVectorBundleKaneyama
+        u: Matrix
+            with just one column over @TO ZZ@ representing a degree vector
+    Outputs
+        i:ZZ
+    Description
+        Text
+            This function computes the Euler characteristic of a vector bundle if only the bundle is
+            given to the function. For this it first computes the set of all degrees that give
+            non-zero cohomology (see @TO deltaE@) and then computes the Euler characteristic for
+            each these degrees. If the underlying variety is not complete then this set may not be
+            finite. Thus, for a non-complete toric variety an error is returned.
+        Text
+            If in addition a one-column matrix over @TO ZZ@, representing a degree vector @TT "u"@,
+            is given, it computes the Euler characteristic of the degree @TT "u"@-part of the vector
+            bundle @TT "E"@. For this the variety need not be complete.
+        Example
+            E = tangentBundleKaneyama(hirzebruchFan 3)
+            u = matrix {{0},{0}}
+            eulerChi(u,E)
+    SeeAlso
+        deltaE
+        (deltaE,ToricVectorBundleKaneyama)
+        (cohomology,ZZ,ToricVectorBundle)
+        (cohomology,ZZ,ToricVectorBundleKaneyama)
+        (hh,ZZ,ToricVectorBundle)
+        (hh,ZZ,ToricVectorBundleKaneyama)
+///
+*-
+
 
 -- TODO Unify with Klyachko
 
@@ -649,25 +728,3 @@ doc ///
         (deltaE,ToricVectorBundle)
 ///
 
--- TODO Unify with Klyachko
--*
-doc ///
-    Key 
-        (eulerChi,ToricVectorBundleKaneyama)
-        (eulerChi,Matrix,ToricVectorBundleKaneyama)
-    Headline
-        TODO
-    Usage
-        chi = eulerChiKaneyama(E)
-        chi = eulerChiKaneyama(u,E)
-    Inputs
-        E : ToricVectorBundleKaneyama
-        u : Matrix
-            a one-column matrix representing a degree vector
-    Outputs
-        chi : ZZ
-    Description
-        Text
-          TODO
-///
-*-

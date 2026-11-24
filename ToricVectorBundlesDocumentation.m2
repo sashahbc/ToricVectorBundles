@@ -1850,7 +1850,7 @@ doc ///
 --------------------------------------------------------
 -- Weil decorations
 --------------------------------------------------------
-
+-*
 
 doc ///
     Key
@@ -1863,7 +1863,7 @@ doc ///
     Inputs
         E : ToricVectorBundle
     Outputs
-        WD : WeilDecoration
+        WD : List
     Description
         Text
             Given a @TO "ToricVectorBundle"@ @TT "E"@ in the Klyachko convention over a @TO "NormalToricVarieties:NormalToricVariety"@ @TT "X"@, 
@@ -1881,7 +1881,9 @@ doc ///
         weilToKlyachko
 ///
 
+*-
 
+-*
 doc ///
     Key
         weilToKlyachko
@@ -1917,6 +1919,7 @@ doc ///
         weilDecoration
 ///
 
+*-
 -*
 doc ///
     Key

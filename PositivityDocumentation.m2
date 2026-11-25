@@ -4,34 +4,32 @@
 
 beginDocumentation()
 
-document {
-  Key => {PositivityToricBundles, Verbosity},
-  Headline => "checks positivity of toric vector bundles",
+doc ///
+    Key
+        PositivityToricBundles
+    Headline
+        check positivity of toric vector bundles
+    Description
+        Text
+            Given a toric vector bundle, i.e. an equivariant vector bundle on a smooth complete toric variety,
+            we provide several methods to check the positivity of this bundle, more precisely,
+            one can test whether the bundle is nef, (very) ample or globally generated.
+        Text
+           Additionally, one  can compute the toric Chern character of a toric vector bundle as introduced by Sam Payne.
+        Text
+            To check nefness and ampleness, we use a result of Milena Hering, Mircea Mustaţă and Sam Payne,
+            namely, that it is sufficient to check this for the restriction of the bundle to the torus invariant curves.
+        Text
+            For global generation and very ampleness, we use results of Sandra Di Rocco, Kelly Jabbusch and Gregory Smith,
+            who describe these properties in terms of the so-called parliament of polytopes of a toric vector bundle.
+            From the parliament of polytopes one can extract the information up to which order jets are separated by the vector bundle. 
+            Globally generated or very ample toric vector bundles are those that separate 0-jets or 1-jets, respectively.
+        Text
+            For the mathematical background see
+///
 
+-*
 
-  "Given a toric vector bundle, i.e. an equivariant vector bundle on a smooth complete toric variety, ",
-  "this package can check the positivity of this bundle. ",
-  TT "PositivityToricBundles", " can check whether a toric vector bundle is",
-  UL {
-    {"nef, i.e. whether the line bundle ", TEX ///$\mathcal{O}(1)$ on $\mathbb{P}(\mathcal E)$///, " is nef;"},
-    {"(very) ample, i.e. whether the line bundle ", TEX ///$\mathcal{O}(1)$ on $\mathbb{P}(\mathcal E)$///, " is (very) ample;"},
-    {"globally generated."}
-  },
-  "Additionally, ", TT "PositivityToricBundles", " can compute the toric Chern character of a toric vector bundle as introduced by Sam Payne.",
-  PARA{},
-  "For the computational purposes, ", TT "PositivityToricBundles", " uses the description of a toric vector bundles by filtrations developed by Alexander Klyachko, ",
-  "and relies on its implementation via the ", TO ToricVectorBundles, " package by René Birkner, Nathan Ilten and Lars Petersen. ",
-  BR{},
-  "To check nefness and ampleness, ", TT "PositivityToricBundles", " uses a result of Milena Hering, Mircea Mustaţă and Sam Payne, ",
-  "namely, that it is sufficient to check this for the restriction of the bundle to the torus invariant curves. ",
-  "The central method for this is ", TO restrictToInvCurves, "; the methods ", TT "isNef", " and ", TT "isAmple", " are based on it.",
-  BR{},
-  "For global generation and very ampleness, ", TT "PositivityToricBundles", " uses results of Sandra Di Rocco, Kelly Jabbusch and Gregory Smith, ",
-  "who describe these properties in terms of the so-called parliament of polytopes of a toric vector bundle. ",
-  "From the parliament of polytopes one can extract the information up to which order jets are separated by the vector bundle. Globally generated or very ample toric vector bundles are those that separate 0-jets or 1-jets, respectively. ",
-  "Here, the central method is ", TO separatesJets, "; built on it are ", TT "isGloballyGenerated", " and ", TT "isVeryAmple", ".",
-  PARA{},
-  "For the mathematical background see ",
   UL {
    {"[K] Alexander Klyachko, ", EM "Equivariant bundles over toral varieties", ", Izv. Akad. Nauk SSSR Ser. Mat., 53, 1989."},
    {"[P] Sam Payne, ", EM "Moduli of toric vector bundles", ", Compos. Math, 144, 2008."},
@@ -454,3 +452,4 @@ document {
   SeeAlso => {"ToricVectorBundles::dual(ToricVectorBundle)", "ToricVectorBundles::tensor(ToricVectorBundle,ToricVectorBundle)"}
   }
 
+*-

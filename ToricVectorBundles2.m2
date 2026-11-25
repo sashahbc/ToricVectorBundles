@@ -1417,6 +1417,7 @@ load "Positivity.m2"
 
 load "ToricVectorBundlesDocumentation.m2"
 load "KaneyamaDocumentation.m2"
+load "PositivityDocumentation.m2"
 
 -------------------------------------------
 -- TESTS

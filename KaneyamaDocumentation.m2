@@ -620,6 +620,7 @@ doc ///
         (hh,ZZ,ToricVectorBundle)
         (hh,ZZ,ToricVectorBundleKaneyama)
 ///
+*-
 
 
 
